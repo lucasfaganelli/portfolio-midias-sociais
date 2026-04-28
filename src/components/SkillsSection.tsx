@@ -22,7 +22,7 @@ const skills = [
   },
   {
     icon: Scissors,
-    title: "Edição (CapCut)",
+    title: "Edição (DaVinci Resolve)",
     description: "Edição dinâmica com cortes estratégicos, trilhas sonoras e legendas envolventes.",
     color: "from-secondary to-blue-400",
     tag: "Edição",

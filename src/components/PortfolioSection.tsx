@@ -28,7 +28,7 @@ const projects = [
     description:
       "Edição dinâmica utilizando cortes estratégicos, legendas impactantes e ritmo envolvente. Cada corte é calculado para maximizar a retenção do espectador.",
     metrics: [
-      { label: "Ferramenta", value: "CapCut" },
+      { label: "Ferramenta", value: "DaVinci Resolve" },
       { label: "Ritmo", value: "Dinâmico" },
     ],
   },

@@ -28,7 +28,7 @@ const platforms = [
 const focuses = [
   "Vídeos curtos de alta retenção",
   "Conteúdo motivacional e estratégico",
-  "Edição profissional (CapCut)",
+  "Edição profissional (DaVinci Resolve)",
   "Roteiros focados em retenção",
   "Crescimento orgânico",
 ];
