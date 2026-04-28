@@ -4,8 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig({
-  // IMPORTANTE para GitHub Pages
-  base: "/portfolio-midias/",
+  base: "/portfolio-midias-sociais/",
 
   plugins: [
     react(),
