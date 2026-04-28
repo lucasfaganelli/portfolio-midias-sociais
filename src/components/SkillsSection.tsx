@@ -6,68 +6,74 @@ import {
   Scissors,
   TrendingUp,
   FileText,
-  BarChart2,
   Palette,
-  Search,
   Target,
 } from "lucide-react";
 
 const skills = [
   {
-    icon: Video,
-    title: "Reels & TikTok",
-    description: "Criação de conteúdo estratégico para Reels e TikTok com alto potencial de viralização.",
+    icon: Scissors,
+    title: "Edição de Vídeo",
+    description:
+      "Edição profissional com cortes precisos, ritmo envolvente e narrativa fluida.",
     color: "from-primary to-secondary",
-    tag: "Vídeo",
+    tag: "Core",
   },
   {
-    icon: Scissors,
-    title: "Edição (DaVinci Resolve)",
-    description: "Edição dinâmica com cortes estratégicos, trilhas sonoras e legendas envolventes.",
+    icon: Video,
+    title: "Vídeos Curtos",
+    description:
+      "Edição para Reels, TikTok e Shorts com foco total em retenção.",
     color: "from-secondary to-blue-400",
-    tag: "Edição",
+    tag: "Formato",
   },
   {
     icon: Target,
-    title: "Estratégias de Retenção",
-    description: "Técnicas avançadas para maximizar o tempo de visualização e engajamento.",
+    title: "Retenção de Audiência",
+    description:
+      "Estrutura de vídeos pensada para prender atenção nos primeiros segundos.",
     color: "from-primary to-purple-400",
-    tag: "Estratégia",
+    tag: "Performance",
   },
   {
     icon: FileText,
-    title: "Roteirização",
-    description: "Roteiros para vídeos curtos focados em gancho, retenção e call-to-action.",
+    title: "Storytelling",
+    description:
+      "Construção narrativa que mantém o público assistindo até o final.",
     color: "from-violet-500 to-primary",
-    tag: "Conteúdo",
-  },
-  {
-    icon: TrendingUp,
-    title: "Growth Orgânico",
-    description: "Estratégias de crescimento sem anúncios através de SEO de conteúdo e consistência.",
-    color: "from-secondary to-cyan-400",
-    tag: "Growth",
+    tag: "Narrativa",
   },
   {
     icon: Palette,
-    title: "Canva & Design",
-    description: "Criação de artes, thumbnails e posts com identidade visual coerente.",
+    title: "Color Grading",
+    description:
+      "Tratamento de cor para dar identidade visual e qualidade profissional.",
     color: "from-pink-500 to-primary",
-    tag: "Design",
+    tag: "Visual",
   },
   {
-    icon: Search,
-    title: "Análise de Perfis",
-    description: "Diagnóstico completo de perfis com estratégias de melhoria baseadas em dados.",
-    color: "from-primary to-indigo-400",
-    tag: "Analytics",
+    icon: Video,
+    title: "Legendagem",
+    description:
+      "Legendas dinâmicas e estratégicas para aumentar retenção.",
+    color: "from-indigo-500 to-blue-400",
+    tag: "Engajamento",
   },
   {
-    icon: BarChart2,
-    title: "Estratégia Digital",
-    description: "Planejamento de conteúdo consistente com foco em posicionamento e autoridade.",
-    color: "from-secondary to-primary",
-    tag: "Planejamento",
+    icon: Scissors,
+    title: "Ritmo & Cortes",
+    description:
+      "Cortes sincronizados com áudio e dinâmica para manter o flow do vídeo.",
+    color: "from-cyan-400 to-blue-500",
+    tag: "Edição",
+  },
+  {
+    icon: TrendingUp,
+    title: "Performance de Conteúdo",
+    description:
+      "Edição orientada a métricas como retenção, tempo de exibição e engajamento.",
+    color: "from-primary green-400",
+    tag: "Resultado",
   },
 ];
 
@@ -76,7 +82,11 @@ export default function SkillsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="habilidades" className="relative py-24 sm:py-32 overflow-hidden" style={{ background: "#161616" }}>
+    <section
+      id="habilidades"
+      className="relative py-24 sm:py-32 overflow-hidden"
+      style={{ background: "#161616" }}
+    >
       <div className="orb-blue w-[500px] h-[500px] top-0 right-0 opacity-25" />
       <div className="orb-purple w-[400px] h-[400px] bottom-0 left-0 opacity-20" />
 
@@ -93,7 +103,7 @@ export default function SkillsSection() {
             O Que Eu <span className="text-gradient">Faço</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-base sm:text-lg">
-            Combinando visão tecnológica com criatividade para gerar conteúdo que converte.
+            Edição de vídeos focada em retenção, ritmo e performance para redes sociais.
           </p>
         </motion.div>
 
@@ -108,12 +118,16 @@ export default function SkillsSection() {
               className="skill-card gradient-border group"
             >
               {/* Icon */}
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${skill.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div
+                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${skill.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+              >
                 <skill.icon size={22} className="text-white" />
               </div>
 
               {/* Tag */}
-              <div className="tag-purple mb-3 inline-block">{skill.tag}</div>
+              <div className="tag-purple mb-3 inline-block">
+                {skill.tag}
+              </div>
 
               {/* Title */}
               <h3 className="font-display font-bold text-foreground text-base mb-2">

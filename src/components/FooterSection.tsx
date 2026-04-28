@@ -13,10 +13,10 @@ export default function FooterSection() {
             </div>
             <div>
               <div className="font-display font-bold text-foreground text-sm">
-                Lucas Vinicius Faganelli da Silva
+                Lucas Faganelli 
               </div>
               <div className="text-muted-foreground text-xs">
-                Criador de Conteúdo e Social Media
+                Editor de Video e Criador de Conteudo
               </div>
             </div>
           </div>
@@ -52,9 +52,8 @@ export default function FooterSection() {
 
           {/* Copyright */}
           <div className="text-muted-foreground text-sm flex items-center gap-1">
-            © 2026 Lucas Faganelli. Feito com{" "}
-            <Heart size={12} className="text-primary inline" fill="currentColor" />{" "}
-            e criatividade.
+            © 2026 Lucas Faganelli. Feito com
+           criatividade.
           </div>
         </div>
       </div>

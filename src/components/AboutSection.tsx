@@ -26,11 +26,11 @@ const platforms = [
 ];
 
 const focuses = [
-  "Vídeos curtos de alta retenção",
-  "Conteúdo motivacional e estratégico",
-  "Edição profissional (DaVinci Resolve)",
-  "Roteiros focados em retenção",
-  "Crescimento orgânico",
+  "Edição de vídeos curtos com alta retenção",
+  "Cortes dinâmicos e ritmo envolvente",
+  "Legendagem e elementos visuais",
+  "Color grading e finalização",
+  "Estrutura de vídeos para Reels, Shorts e TikTok",
 ];
 
 export default function AboutSection() {
@@ -53,8 +53,7 @@ export default function AboutSection() {
         >
           <span className="section-label">Sobre Mim</span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground">
-            Tecnologia &amp;{" "}
-            <span className="text-gradient">Criatividade</span>
+            Edição &amp; <span className="text-gradient">Performance</span>
           </h2>
         </motion.div>
 
@@ -66,22 +65,12 @@ export default function AboutSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-6">
-              Sou desenvolvedor com forte interesse em criação de conteúdo
-              digital e atualmente em{" "}
-              <span className="text-foreground font-medium">
-                transição de carreira
-              </span>{" "}
-              para a área de Social Media e Marketing Digital.
+              Sou editor de vídeo com background em desenvolvimento, focado na criação de conteúdos dinâmicos e de alta retenção para redes sociais utilizando <span className="text-primary font-medium">DaVinci Resolve</span>.
             </p>
 
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-8">
-              Tenho experiência com tecnologia, o que me permite entender{" "}
-              <span className="text-primary font-medium">algoritmos</span>,
-              comportamento digital e estratégias de crescimento com uma visão{" "}
-              <span className="text-secondary font-medium">
-                analítica e estratégica
-              </span>
-              .
+              Minha base em tecnologia me permite entender profundamente{" "}
+              <span className="text-primary font-medium">retenção</span>, comportamento do público e estrutura de vídeos que performam, aplicando isso diretamente na edição para maximizar resultados.
             </p>
 
             {/* Focus list */}
@@ -109,11 +98,7 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 1 }}
               className="mt-8 text-foreground font-medium text-base sm:text-lg"
             >
-              Meu objetivo é ajudar marcas e perfis a crescerem através de
-              conteúdo{" "}
-              <span className="text-gradient">
-                estratégico, criativo e consistente.
-              </span>
+              Meu objetivo é transformar ideias em vídeos que prendem atenção, aumentam retenção e geram resultado.
             </motion.p>
           </motion.div>
 
@@ -136,9 +121,9 @@ export default function AboutSection() {
                     }}
                   >
                     <img
-                      src= {lucasProfile}
+                      src={lucasProfile}
                       alt="Lucas Vinicius"
-                     className="w-full h-full rounded-2xl object-cover object-center scale-112 contrast-145 saturate-130"
+                      className="w-full h-full rounded-2xl object-cover object-center scale-112 contrast-145 saturate-130"
                     />
                   </div>
 
@@ -153,7 +138,7 @@ export default function AboutSection() {
                     Lucas Faganelli
                   </div>
                   <div className="text-muted-foreground text-sm">
-                    Social Media &amp; Creator
+                    Video Editor | Social Media
                   </div>
                   <div className="flex items-center gap-1 mt-1">
                     <div
@@ -178,12 +163,12 @@ export default function AboutSection() {
                     Background
                   </div>
                   <div className="text-sm text-foreground font-medium">
-                    Desenvolvedor → Social Media
+                    Editor de Video
                   </div>
                 </div>
               </div>
 
-              {/* Platforms (AGORA CLICÁVEL) */}
+              {/* Platforms */}
               <div className="mb-6">
                 <div className="text-xs text-muted-foreground mb-3 uppercase tracking-wider">
                   Plataformas
@@ -212,11 +197,11 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              {/* Growth indicator */}
+              {/* Performance indicator */}
               <div className="flex items-center gap-2 p-3 bg-primary/10 rounded-xl border border-primary/20">
                 <TrendingUp size={16} className="text-primary" />
                 <span className="text-primary text-sm font-medium">
-                  Focado em crescimento orgânico
+                  Focado em retenção e performance
                 </span>
               </div>
             </div>
