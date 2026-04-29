@@ -1,110 +1,215 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Play } from "lucide-react";
+import { Play, ArrowUpRight, TrendingUp } from "lucide-react";
 
 const projects = [
   {
-    tag: "Reels & TikTok",
+    category: "Reels de Performance",
     title: "Conteúdo Motivacional",
-    subtitle: "Alta retenção e impacto emocional",
+    client: "Instagram • Nicho Motivacional",
+    result: "Alta retenção",
+    retention: "Impacto emocional",
+    subtitle:
+      "Vídeo estruturado para prender atenção, aumentar tempo de retenção e gerar maior conexão com o público.",
     link: "https://www.instagram.com/reel/DTBSakaAQ8b/",
-    gradient: "from-pink-500 via-purple-500 to-indigo-500",
-    metrics: ["Retenção Alta", "Impacto Emocional"],
+    metrics: ["Retenção Alta", "Impacto Emocional", "Engajamento"],
   },
   {
-    tag: "Edição",
+    category: "Short-form Editing",
     title: "Edição de Vídeos Curtos",
-    subtitle: "Ritmo dinâmico e cortes estratégicos",
+    client: "TikTok • Conteúdo Estratégico",
+    result: "Ritmo dinâmico",
+    retention: "Cortes estratégicos",
+    subtitle:
+      "Cortes estratégicos e edição pensada para manter atenção e melhorar performance orgânica.",
     link: "https://www.tiktok.com/@risekraken/video/7557452853858585868",
-    gradient: "from-blue-500 via-cyan-500 to-teal-400",
-    metrics: ["DaVinci Resolve", "Ritmo Dinâmico"],
+    metrics: ["DaVinci Resolve", "Ritmo Dinâmico", "Alta Conversão"],
   },
   {
-    tag: "Performance",
+    category: "Growth Content",
     title: "Vídeo para Crescimento",
-    subtitle: "Foco em retenção e engajamento",
+    client: "TikTok • Estratégia Orgânica",
+    result: "+25 mil views",
+    retention: "Alta Performance",
+    subtitle:
+      "Vídeo estruturado para crescimento, retenção e fortalecimento de autoridade digital.",
     link: "https://www.tiktok.com/@risekraken/video/7539225503278845190",
-    gradient: "from-violet-500 via-fuchsia-500 to-purple-500",
-    metrics: ["Orgânico", "Alta Performance"],
+    metrics: ["Orgânico", "Performance", "Crescimento"],
   },
 ];
 
 export default function PortfolioSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px",
+  });
 
   return (
-    <section id="portfolio" className="relative py-24 sm:py-32 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6" ref={ref}>
-        <div className="mb-16">
+    <section
+      id="portfolio"
+      className="relative py-24 sm:py-32 overflow-hidden bg-[#050505]"
+    >
+      {/* Glow Background */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 blur-[160px] rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10" ref={ref}>
+        {/* Header */}
+        <div className="mb-20">
           <span className="section-label">Portfólio</span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Meus <span className="text-gradient">Projetos</span>
+
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+            Cases de <span className="text-gradient">Performance</span>
           </h2>
-          <p className="text-muted-foreground">
-            Edições focadas em retenção, ritmo e performance real.
+
+          <p className="text-zinc-400 max-w-2xl text-lg leading-relaxed">
+            Edição estratégica para creators e negócios que precisam de vídeos
+            com retenção real, performance e crescimento orgânico.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Cards */}
+        <div className="space-y-10">
           {projects.map((project, i) => (
             <motion.a
               key={project.title}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="group relative rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
+              transition={{
+                duration: 0.7,
+                delay: i * 0.15,
+              }}
+              className="group block"
             >
-              {/* GRADIENT BACKGROUND */}
               <div
-                className={`h-72 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
+                className="rounded-3xl border border-white/10 bg-white/[0.02]
+                backdrop-blur-xl overflow-hidden
+                hover:border-primary/30 transition-all duration-500
+                hover:shadow-[0_0_80px_rgba(139,92,246,0.08)]
+                hover:-translate-y-1"
               >
-                {/* Glow animado */}
-                <div className="absolute inset-0 opacity-30 blur-2xl bg-white/20 group-hover:scale-110 transition duration-700" />
+                <div className="grid lg:grid-cols-2">
+                  {/* LEFT SIDE */}
+                  <div className="relative min-h-[340px] bg-gradient-to-br from-zinc-900 via-zinc-800 to-black flex items-center justify-center overflow-hidden">
+                    {/* Glow */}
+                    <div className="absolute w-72 h-72 rounded-full bg-purple-500/10 blur-3xl" />
 
-                {/* Overlay escuro */}
-                <div className="absolute inset-0 bg-black/40" />
-
-                {/* Play */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-white/20 transition">
-                    <Play size={28} className="text-white ml-1" />
-                  </div>
-                </div>
-
-                {/* Tag */}
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 text-xs rounded-full bg-black/40 backdrop-blur text-white border border-white/10">
-                    {project.tag}
-                  </span>
-                </div>
-
-                {/* Texto */}
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-white font-semibold text-lg">
-                    {project.title}
-                  </h3>
-                  <p className="text-white/70 text-sm">
-                    {project.subtitle}
-                  </p>
-                </div>
-              </div>
-
-              {/* FOOTER */}
-              <div className="p-4 bg-[#0D0D0D]/80 backdrop-blur">
-                <div className="flex gap-2 flex-wrap">
-                  {project.metrics.map((m) => (
-                    <span
-                      key={m}
-                      className="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md text-white/80"
+                    {/* Play Button */}
+                    <div
+                      className="relative z-10 w-24 h-24 rounded-full
+                      border border-white/10
+                      bg-white/5 backdrop-blur-xl
+                      flex items-center justify-center
+                      group-hover:scale-110 transition duration-300"
                     >
-                      {m}
-                    </span>
-                  ))}
+                      <Play
+                        size={34}
+                        className="text-white ml-1"
+                      />
+                    </div>
+
+                    {/* Category */}
+                    <div className="absolute top-6 left-6">
+                      <span
+                        className="px-4 py-2 rounded-full text-xs
+                        border border-white/10
+                        bg-black/30 backdrop-blur-md
+                        text-white font-medium"
+                      >
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* RIGHT SIDE */}
+                  <div className="p-8 sm:p-10 flex flex-col justify-between">
+                    <div>
+                      {/* Label */}
+                      <div className="flex items-center gap-2 text-primary text-sm font-medium mb-3">
+                        <TrendingUp size={16} />
+                        Resultado estratégico
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-3xl font-bold text-white mb-3">
+                        {project.title}
+                      </h3>
+
+                      {/* Client */}
+                      <p className="text-zinc-400 mb-6">
+                        {project.client}
+                      </p>
+
+                      {/* Description */}
+                      <p className="text-zinc-300 leading-relaxed mb-8">
+                        {project.subtitle}
+                      </p>
+
+                      {/* Results */}
+                      <div className="grid grid-cols-2 gap-4 mb-8">
+                        <div
+                          className="rounded-2xl border border-white/5
+                          bg-white/[0.02] p-4"
+                        >
+                          <div className="text-xs text-zinc-500 mb-1">
+                            Resultado
+                          </div>
+
+                          <div className="text-white font-semibold">
+                            {project.result}
+                          </div>
+                        </div>
+
+                        <div
+                          className="rounded-2xl border border-white/5
+                          bg-white/[0.02] p-4"
+                        >
+                          <div className="text-xs text-zinc-500 mb-1">
+                            Foco
+                          </div>
+
+                          <div className="text-white font-semibold">
+                            {project.retention}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex gap-2 flex-wrap">
+                        {project.metrics.map((metric) => (
+                          <span
+                            key={metric}
+                            className="px-3 py-1.5 rounded-full
+                            text-xs text-zinc-300
+                            border border-white/10
+                            bg-white/[0.02]"
+                          >
+                            {metric}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="mt-10 flex items-center gap-3 text-white font-medium">
+                      <span>Assistir Projeto</span>
+
+                      <div
+                        className="w-10 h-10 rounded-xl
+                        border border-white/10
+                        flex items-center justify-center
+                        group-hover:translate-x-1 transition"
+                      >
+                        <ArrowUpRight size={18} />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.a>

@@ -123,7 +123,17 @@ export default function AboutSection() {
                     <img
                       src={lucasProfile}
                       alt="Lucas Vinicius"
-                      className="w-full h-full rounded-2xl object-cover object-center scale-112 contrast-145 saturate-130"
+                      loading="eager"
+                      decoding="async"
+                      className="w-full h-full rounded-2xl object-cover 
+                                border border-white/10
+                                shadow-xl
+                                contrast-110 saturate-110"
+                      style={{
+                        imageRendering: "auto",
+                        objectPosition: "center 20%",
+                        transform: "scale(1.08)",
+                      }}
                     />
                   </div>
 

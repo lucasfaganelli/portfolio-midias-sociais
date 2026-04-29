@@ -30,11 +30,20 @@ export default function HeroSection() {
             <img
               src={lucasProfile}
               alt="Lucas"
-              className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover border border-white/10 shadow-xl"
+              loading="eager"
+              decoding="async"
+              className="w-40 h-40 sm:w-52 sm:h-52 rounded-full object-cover 
+                        border-2 border-white/20 
+                        shadow-2xl 
+                        ring-2 ring-purple-500/30"
+              style={{
+                imageRendering: "auto",
+                objectPosition: "center 25%",
+              }}
             />
           </div>
 
-          <div className="mt-4 flex items-center gap-2 tag-purple">
+          <div className="mt-5 flex items-center gap-2 tag-purple">
             <Sparkles size={12} />
             Editor de Vídeo
           </div>
@@ -58,7 +67,9 @@ export default function HeroSection() {
           className="text-xl sm:text-2xl text-white mb-6 font-medium"
         >
           Transformando vídeos em performance que{" "}
-          <span className="text-secondary"> <strong>prendem atenção</strong></span>
+          <span className="text-secondary">
+            <strong>prendem atenção</strong>
+          </span>
         </motion.p>
 
         {/* DESCRIÇÃO */}
@@ -78,12 +89,18 @@ export default function HeroSection() {
           transition={{ delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a href="#portfolio" className="btn-primary flex items-center gap-2">
+          <a
+            href="#portfolio"
+            className="btn-primary flex items-center gap-2"
+          >
             <Play size={16} />
             Ver Projetos
           </a>
 
-          <a href="#contato" className="btn-outline">
+          <a
+            href="#contato"
+            className="btn-outline"
+          >
             Falar Comigo
           </a>
         </motion.div>
